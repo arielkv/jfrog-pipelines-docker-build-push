@@ -21,13 +21,13 @@ resources:
       buildName: svc_build
       buildNumber: 1
 
-  #- name: releaseBundle
-  #  type: ReleaseBundle
-  #  configuration:
-   #   sourceDistribution: demoDist
-   #   name: demo_rb
-    #    version: v1.0.0
-  
+  # - name: releaseBundle
+  #   type: ReleaseBundle
+  #   configuration:
+  #     sourceDistribution: demoDist
+  #     name: demo_rb
+  #     version: v1.0.0
+  #
   # - name: signedBundle
   #   type: ReleaseBundle
   #   configuration:
@@ -88,27 +88,27 @@ pipelines:
             - name: build_info_1_docker_build_push
           outputResources:
             - name: promoted_build_info
-     # - name: demo_release
-     # steps:
-      #  - name: bundle
-       #   type: CreateReleaseBundle
-       #   configuration:
-        #    releaseBundleName: demo_rb
-         #   releaseBundleVersion: v1.0.${run_number}
-          #  dryRun: false
-           # sign: false
-            #description: "this is a demo bundle"
-           # inputResources:
-            #  - name: promoted_build_info
-            #    trigger: false
-            #outputResources:
-            #  - name: releaseBundle
-            #releaseNotes:
-            #  syntax: markdown
-             # content: |
-                ## Heading
-              #    * firstBullet
-               #   * secondBullet
+  # - name: demo_release
+  #   steps:
+  #     - name: bundle
+  #       type: CreateReleaseBundle
+  #       configuration:
+  #         releaseBundleName: demo_rb
+  #         releaseBundleVersion: v1.0.${run_number}
+  #         dryRun: false
+  #         sign: false
+  #         description: "this is a demo bundle"
+  #         inputResources:
+  #           - name: promoted_build_info
+  #             trigger: false
+  #         outputResources:
+  #           - name: releaseBundle
+  #         releaseNotes:
+  #           syntax: markdown
+  #           content: |
+  #             ## Heading
+  #               * firstBullet
+  #               * secondBullet
   #     - name: sign
   #       type: SignReleaseBundle
   #       configuration:
