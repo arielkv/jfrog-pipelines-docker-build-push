@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: github   # replace with your integration
-      path: BatelT/jfrog-pipelines-docker-build-push    # replace with your repository name
+      path: arielkv/jfrog-pipelines-docker-build-push    # replace with your repository name
       branches:
         include: master
 
@@ -54,7 +54,7 @@ pipelines:
         configuration:
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: 10.132.0.207:8082/docker-local/alpine37
+          dockerImageName: docker-batelt.jfrog.io/alpine37
           dockerImageTag: ${run_number}
           inputResources:
             - name: repo_1_docker_build_push
@@ -64,7 +64,7 @@ pipelines:
       - name: docker_push
         type: DockerPush
         configuration:
-          targetRepository: docker-local
+          targetRepository: docker
           integrations:
             - name: demoArt
           inputSteps:
