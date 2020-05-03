@@ -54,8 +54,8 @@ pipelines:
         configuration:
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: 10.160.0.137:8082/docker-local/alpine37
-          dockerImageTag: 1
+          dockerImageName: 10.132.0.207:8082/docker-local/alpine37
+          dockerImageTag: ${run_number}
           inputResources:
             - name: repo_1_docker_build_push
           integrations:
@@ -88,6 +88,7 @@ pipelines:
             - name: build_info_1_docker_build_push
           outputResources:
             - name: promoted_build_info
+
   # - name: demo_release
   #   steps:
   #     - name: bundle
